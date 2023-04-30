@@ -2,8 +2,14 @@ package io.deepakeuler.ipldashboard.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
+@Entity//my mapping with entity JPA is going to create this table when app starts with all field
 public class Match {
 
+	@Id//identifier id as primary key
     private long id;
     private String city;
     private LocalDate date;
