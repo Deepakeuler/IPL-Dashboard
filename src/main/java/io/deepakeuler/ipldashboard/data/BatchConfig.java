@@ -23,7 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import io.deepakeuler.ipldashboard.model.Match;
 
 @Configuration
-@EnableBatchProcessing
+//@EnableBatchProcessing
 public class BatchConfig {
 
     private final String[] fieldNames = new String[] {
