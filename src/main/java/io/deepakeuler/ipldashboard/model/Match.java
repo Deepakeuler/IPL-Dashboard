@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 
-@Entity//my mapping with entity JPA is going to create this table when app starts with all field
+@Entity   //my mapping with entity JPA is going to create this table when app starts with all field
 public class Match {
 
 	@Id//identifier id as primary key

@@ -1,5 +1,6 @@
 package io.deepakeuler.ipldashboard.data;
 
+
 public class MatchInput {
     
     private String id;
@@ -121,6 +122,28 @@ public class MatchInput {
 		return umpire2;
 	}
 	public void setUmpire2(String umpire2) {
+		this.umpire2 = umpire2;
+	}
+	
+	public MatchInput(String id, String city, String date, String player_of_match, String venue, String neutral_venue,
+			String team1, String team2, String toss_winner, String toss_decision, String winner, String result,
+			String result_margin, String eliminator, String method, String umpire1, String umpire2) {
+		this.id = id;
+		this.city = city;
+		this.date = date;
+		this.player_of_match = player_of_match;
+		this.venue = venue;
+		this.neutral_venue = neutral_venue;
+		this.team1 = team1;
+		this.team2 = team2;
+		this.toss_winner = toss_winner;
+		this.toss_decision = toss_decision;
+		this.winner = winner;
+		this.result = result;
+		this.result_margin = result_margin;
+		this.eliminator = eliminator;
+		this.method = method;
+		this.umpire1 = umpire1;
 		this.umpire2 = umpire2;
 	}
 
