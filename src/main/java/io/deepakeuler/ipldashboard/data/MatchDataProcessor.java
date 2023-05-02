@@ -1,11 +1,8 @@
 
 package io.deepakeuler.ipldashboard.data;
 
-import java.time.LocalDate;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.batch.item.ItemProcessor;
 
 import io.deepakeuler.ipldashboard.model.Match;
@@ -19,9 +16,9 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 
     final Match match = new Match();
 
-    match.setId(Long.parseLong(matchInput.getId()));
+    match.setId(matchInput.getId());
     match.setCity(matchInput.getCity());
-    match.setDate(LocalDate.parse(matchInput.getDate()));
+    match.setDate(matchInput.getDate());
     match.setPlayerOfMatch(matchInput.getPlayer_of_match());
     match.setVenue(matchInput.getVenue());
 

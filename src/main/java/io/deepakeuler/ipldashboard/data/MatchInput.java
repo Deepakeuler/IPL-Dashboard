@@ -22,6 +22,11 @@ public class MatchInput {
     private String umpire2;
 
 
+	public MatchInput(){
+		
+	}
+
+
 	public String getId() {
 		return id;
 	}

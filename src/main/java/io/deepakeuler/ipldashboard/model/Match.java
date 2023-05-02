@@ -1,18 +1,15 @@
 package io.deepakeuler.ipldashboard.model;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-
-@Entity   //my mapping with entity JPA is going to create this table when app starts with all field
+@Entity
 public class Match {
 
 	@Id//identifier id as primary key
-    private long id;
+    private String id;
     private String city;
-    private LocalDate date;
+    private String date;
     private String playerOfMatch;
     private String venue;
     private String team1;
@@ -25,10 +22,15 @@ public class Match {
     private String umpire1;
     private String umpire2;//add
     
-	public long getId() {
+
+public Match(){
+
+}
+
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getCity() {
@@ -37,10 +39,10 @@ public class Match {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public LocalDate getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(LocalDate date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getPlayerOfMatch() {
@@ -90,6 +92,24 @@ public class Match {
 	}
 	public void setResult(String result) {
 		this.result = result;
+	}
+	public Match(String id, String city, String date, String playerOfMatch, String venue, String team1, String team2,
+			String tossWinner, String tossDecision, String matchWinner, String result, String resultMargin,
+			String umpire1, String umpire2) {
+		this.id = id;
+		this.city = city;
+		this.date = date;
+		this.playerOfMatch = playerOfMatch;
+		this.venue = venue;
+		this.team1 = team1;
+		this.team2 = team2;
+		this.tossWinner = tossWinner;
+		this.tossDecision = tossDecision;
+		this.matchWinner = matchWinner;
+		this.result = result;
+		this.resultMargin = resultMargin;
+		this.umpire1 = umpire1;
+		this.umpire2 = umpire2;
 	}
 	public String getResultMargin() {
 		return resultMargin;
