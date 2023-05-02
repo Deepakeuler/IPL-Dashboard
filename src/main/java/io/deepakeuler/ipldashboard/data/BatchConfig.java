@@ -78,13 +78,13 @@ public class BatchConfig {
 
     @Bean
     public Step step1(JobRepository jobRepository,
-            PlatformTransactionManager transactionManager, JdbcBatchItemWriter<Match> writer) {
+    PlatformTransactionManager transactionManager, JdbcBatchItemWriter<Match> writer) {
         return new StepBuilder("step1", jobRepository)
-                .<MatchInput, Match>chunk(13, transactionManager)
-                .reader(reader())
-                .processor(processor())
-                .writer(writer)
-                .build();
+            .<MatchInput, Match> chunk(10, transactionManager)
+            .reader(reader())
+            .processor(processor())
+            .writer(writer)
+            .build();
     }
 
 }
