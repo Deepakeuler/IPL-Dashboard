@@ -1,15 +1,20 @@
 package io.deepakeuler.ipldashboard.model;
 
+import java.time.LocalDate;
+
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
+@EnableBatchProcessing
 public class Match {
 
 	@Id//identifier id as primary key
-    private String id;
+    private Long id;
     private String city;
-    private String date;
+    private LocalDate date;
     private String playerOfMatch;
     private String venue;
     private String team1;
@@ -27,10 +32,10 @@ public Match(){
 
 }
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getCity() {
@@ -39,10 +44,10 @@ public Match(){
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	public String getPlayerOfMatch() {
@@ -93,7 +98,7 @@ public Match(){
 	public void setResult(String result) {
 		this.result = result;
 	}
-	public Match(String id, String city, String date, String playerOfMatch, String venue, String team1, String team2,
+	public Match(Long id, String city, LocalDate date, String playerOfMatch, String venue, String team1, String team2,
 			String tossWinner, String tossDecision, String matchWinner, String result, String resultMargin,
 			String umpire1, String umpire2) {
 		this.id = id;

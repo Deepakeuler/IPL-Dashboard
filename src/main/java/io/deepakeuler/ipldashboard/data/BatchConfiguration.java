@@ -22,7 +22,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import io.deepakeuler.ipldashboard.model.Match;
 
 @Configuration
-public class BatchConfig {
+public class BatchConfiguration {
 
     private final String[] fieldNames = new String[] {
             "id", "city", "date", "player_of_match", "venue", "neutral_venue", "team1", "team2", "toss_winner",
@@ -65,25 +65,25 @@ public class BatchConfig {
 
 
     @Bean
-    public Job importUserJob(JobRepository jobRepository,
-            JobCompletionNotificationListener listener, Step step1) {
-        return new JobBuilder("importUserJob", jobRepository)
-                .incrementer(new RunIdIncrementer())
-                .listener(listener)
-                .flow(step1)
-                .end()
-                .build();
-    }
+public Job importUserJob(JobRepository jobRepository,
+    JobCompletionNotificationListener listener, Step step1) {
+  return new JobBuilder("importUserJob", jobRepository)
+    .incrementer(new RunIdIncrementer())
+    .listener(listener)
+    .flow(step1)
+    .end()
+    .build();
+}
 
-    @Bean
-    public Step step1(JobRepository jobRepository,
+@Bean
+public Step step1(JobRepository jobRepository,
     PlatformTransactionManager transactionManager, JdbcBatchItemWriter<Match> writer) {
-        return new StepBuilder("step1", jobRepository)
-            .<MatchInput, Match> chunk(10, transactionManager)
-            .reader(reader())
-            .processor(processor())
-            .writer(writer)
-            .build();
-    }
+  return new StepBuilder("step1", jobRepository)
+    .<MatchInput, Match> chunk(10, transactionManager)
+    .reader(reader())
+    .processor(processor())
+    .writer(writer)
+    .build();
+}
 
 }
