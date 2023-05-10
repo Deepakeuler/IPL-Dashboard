@@ -21,8 +21,8 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 
     Match match = new Match();
 
+    
     // match.setId(Long.parseLong("matchInput.getId()"));
-
     try {
       match.setId(Long.parseLong(matchInput.getId()));
     } catch (NumberFormatException e) {
