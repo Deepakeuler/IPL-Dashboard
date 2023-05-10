@@ -9,8 +9,6 @@ import io.deepakeuler.ipldashboard.model.Match;
 
 public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 
-  private static final Logger log = LoggerFactory.getLogger(MatchDataProcessor.class);
-
   @Override
   public Match process(final MatchInput matchInput) throws Exception {
 
