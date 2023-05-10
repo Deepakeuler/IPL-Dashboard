@@ -22,7 +22,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import io.deepakeuler.ipldashboard.model.Match;
 
 @Configuration
-public class BatchConfig {
+public class BatchConfiguration {
 
     private final String[] fieldNames = new String[] {
             "id", "city", "date", "player_of_match", "venue", "neutral_venue", "team1", "team2", "toss_winner",
