@@ -1,8 +1,6 @@
 
 package io.deepakeuler.ipldashboard.data;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
 import io.deepakeuler.ipldashboard.model.Match;
